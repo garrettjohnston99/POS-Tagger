@@ -264,10 +264,20 @@ public class POSTagger {
      */
     public static String getPath(int type) {
         String title = "";
-        if (type == 0) title = "Select a file of sentences to train model";
-        else if (type == 1) title = "Select a file of tags to train model";
-        else if (type == 2) title = "Select a file of sentences to test model";
-        else if (type == 3) title = "Select a file of tags to test model";
+        switch(type) {
+            case(0):
+                title = "Select a file of sentences to train model";
+                break;
+            case(1):
+                title = "Select a file of tags to train model";
+                break;
+            case(2):
+                title = "Select a file of sentences to test model";
+                break;
+            case(3):
+                title = "Select a file of tags to test model";
+                break;
+        }
         System.out.println(title);
 
         FileDialog dialog = new FileDialog((Frame)null, title);
