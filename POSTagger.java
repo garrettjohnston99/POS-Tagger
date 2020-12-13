@@ -148,12 +148,15 @@ public class POSTagger {
                      * Observations: current tag -> current word, freq
                      */ 
                     
-                    if (!observations.containsKey(tag) { // Haven't seen this tag before
+                    if (!observations.containsKey(tag) { 
+                        // Haven't seen this tag before
                         observations.put(tag, new HashMap<>());
-                        observations.get(tag).put(word, 1.0); // Place tag w/ word
-                    } else if (!observations.get(tag).containsKey(word)) { // Seen current tag, but not current word
-                        observations.get(tag).put(word, 1.0); // Place current word in current tag's map
-                    } else { // Seen this tag, and this word. Increment frequency
+                        observations.get(tag).put(word, 1.0);  // Place tag w/ word
+                    } else if (!observations.get(tag).containsKey(word)) { 
+                        // Seen current tag, but not current word
+                        observations.get(tag).put(word, 1.0);  // Place current word in current tag's map
+                    } else { 
+                        // Seen this tag, and this word. Increment frequency
                         observations.get(tag).put(word, observations.get(tag).get(word) + 1);
                     }
 
